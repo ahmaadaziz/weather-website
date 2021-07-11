@@ -17,9 +17,9 @@ weatherForm.addEventListener("submit", (event) => {
         paragraph1.textContent = data.error;
         paragraph2.textContent = "";
       } else {
-        paragraph2.textContent = data.data;
-        paragraph1.textContent =
-          data.address.charAt(0).toUpperCase() + data.address.slice(1);
+        paragraph2.textContent = data.data.forecast;
+        paragraph1.textContent = data.data.location;
+        //data.address.charAt(0).toUpperCase() + data.address.slice(1);
       }
     });
   });

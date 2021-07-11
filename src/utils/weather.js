@@ -9,10 +9,10 @@ const weather = (lat, lon, callback) => {
     } else if (body.error) {
       callback("Unable to find location, Try another search");
     } else {
-      callback(
-        undefined,
-        `It is currently ${body.current.temperature}°C along with a ${body.current.precip}% chance of rain`
-      );
+      callback(undefined, {
+        forecast: `It is currently ${body.current.temperature}°C along with a ${body.current.precip}% chance of rain`,
+        location: body.request.query,
+      });
     }
   });
 };
