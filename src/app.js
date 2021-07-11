@@ -51,10 +51,7 @@ app.get("/weather", (req, res) => {
       if (error) {
         return res.send({ error });
       }
-      res.send({
-        data,
-        address: req.query.address,
-      });
+      res.send({ data });
     });
   });
 });

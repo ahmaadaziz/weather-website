@@ -11,7 +11,7 @@ const weather = (lat, lon, callback) => {
     } else {
       callback(undefined, {
         forecast: `It is currently ${body.current.temperature}°C along with a ${body.current.precip}% chance of rain`,
-        location: body.request.query,
+        location: `${body.location.name}, ${body.location.country}`,
       });
     }
   });
