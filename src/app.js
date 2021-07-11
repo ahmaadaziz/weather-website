@@ -9,8 +9,6 @@ const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
-const features1 = [];
-
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
 app.use(express.static(publicDirectoryPath));
