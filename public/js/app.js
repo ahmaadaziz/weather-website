@@ -11,18 +11,16 @@ weatherForm.addEventListener("submit", (event) => {
     "Getting weather forecast please hold on to your horses...";
   paragraph2.textContent = "";
 
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (respponse) => {
-      respponse.json().then((data) => {
-        if (data.error) {
-          paragraph1.textContent = data.error;
-          paragraph2.textContent = "";
-        } else {
-          paragraph2.textContent = data.data;
-          paragraph1.textContent =
-            data.address.charAt(0).toUpperCase() + data.address.slice(1);
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${location}`).then((respponse) => {
+    respponse.json().then((data) => {
+      if (data.error) {
+        paragraph1.textContent = data.error;
+        paragraph2.textContent = "";
+      } else {
+        paragraph2.textContent = data.data;
+        paragraph1.textContent =
+          data.address.charAt(0).toUpperCase() + data.address.slice(1);
+      }
+    });
+  });
 });
